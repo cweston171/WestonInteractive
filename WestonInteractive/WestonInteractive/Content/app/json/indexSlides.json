@@ -1,0 +1,20 @@
+﻿[
+  {
+    "ID" :  0,
+    "title": "This is a slide e",
+    "src": "/Content/app/images/test.jpg",
+    "caption": "This is a slide caption test."
+  },
+  {
+    "ID" :  1,
+    "title" : "This is a slide t ",
+    "src" : "/Content/app/images/test.jpg",
+    "caption" : "This is a slide test."
+  },
+  {
+    "ID" :  2,
+    "title" : "This is a slide ",
+    "src" : "/Content/app/images/test.jpg",
+    "caption" : "This is a slide capt test."
+  }
+]

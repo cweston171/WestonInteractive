@@ -1,0 +1,135 @@
+﻿/* Import Additional SCSS */
+/* custom carousel styles */
+/* WI Grid */
+.banner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .banner .carousel {
+    display: block;
+    width: auto;
+    height: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; }
+    .banner .carousel .slideset {
+      display: block;
+      width: 100%;
+      padding: 10px; }
+      .banner .carousel .slideset .slide {
+        display: inline-block;
+        width: 24.5%;
+        height: 300px;
+        margin: 3px .25%;
+        box-shadow: none;
+        border: 1px solid red;
+        z-index: 0;
+        -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
+        .banner .carousel .slideset .slide:first-child,
+        .banner .carousel .slideset .slide:nth-child(6n + 6) {
+          width: 49.5%; }
+        .banner .carousel .slideset .slide:hover {
+          box-shadow: 5px 5px 30px #333;
+          box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.75);
+          z-index: 100; }
+        .banner .carousel .slideset .slide > div {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat !important;
+          background-position: top center !important;
+          background-size: cover !important; }
+          .banner .carousel .slideset .slide > div .overlay {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1); }
+            .banner .carousel .slideset .slide > div .overlay .featured {
+              display: inline-block;
+              position: absolute;
+              width: auto;
+              top: 0;
+              left: 0;
+              padding: 4px 12px;
+              z-index: 100;
+              font-size: 16px;
+              font-weight: bold;
+              color: #fff;
+              text-transform: uppercase;
+              background-color: #000;
+              background-color: rgba(214, 0, 0, 0.9);
+              box-shadow: 2px 2px 5px #000;
+              box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+              border-right: 5px solid red;
+              border-bottom: 1px solid red;
+              -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+              transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1); }
+            .banner .carousel .slideset .slide > div .overlay .star {
+              display: block;
+              position: absolute;
+              width: 25px;
+              height: 25px;
+              top: 4px;
+              left: -60px;
+              z-index: 1000;
+              background: url(../images/star-ico.png) no-repeat center center;
+              background-size: cover;
+              -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg); }
+            .banner .carousel .slideset .slide > div .overlay .carousel-caption {
+              display: block;
+              width: 90%;
+              padding: 10px;
+              font-size: 18px;
+              background-color: transparent;
+              background-color: rgba(214, 0, 0, 0.75);
+              border: 1px solid #ff2020;
+              border-bottom: none;
+              box-shadow: 0px 10px 10px #000;
+              box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.75);
+              margin-left: -15%;
+              bottom: -200px;
+              opacity: 0;
+              -webkit-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+              transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1); }
+              .banner .carousel .slideset .slide > div .overlay .carousel-caption h3 {
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: bold; }
+              .banner .carousel .slideset .slide > div .overlay .carousel-caption p {
+                margin: 0; }
+            .banner .carousel .slideset .slide > div .overlay:hover {
+              background-color: transparent; }
+              .banner .carousel .slideset .slide > div .overlay:hover .featured {
+                padding-left: 52px;
+                color: yellow; }
+              .banner .carousel .slideset .slide > div .overlay:hover .star {
+                left: 12px;
+                -webkit-transform: rotate(720deg);
+                -ms-transform: rotate(720deg);
+                transform: rotate(720deg); }
+              .banner .carousel .slideset .slide > div .overlay:hover .carousel-caption {
+                bottom: 0;
+                opacity: 1; }
+
+.test {
+  display: block;
+  cursor: pointer; }
+
+/* MAIN STYLES */
+/* angular ui bootstrap href fix */
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer; }
+
+body {
+  background: url(../images/main-red-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding-top: 90px; }

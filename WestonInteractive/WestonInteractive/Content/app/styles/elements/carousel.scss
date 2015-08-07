@@ -1,0 +1,159 @@
+﻿/* custom carousel styles */
+
+/* WI Grid */
+.banner {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .carousel {
+        display: block;
+        width: auto;
+        height: 680px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        overflow: hidden;
+
+        .slideset {
+            display: block;
+            width: 100%;
+            padding: 10px;
+
+            .slide {
+                display: inline-block;
+                width: 24.5%;
+                height: 300px;
+                margin: 3px .25%;
+
+                box-shadow: none;
+                border: 1px solid red;
+                z-index: 0;
+
+                @include transition(all .5s $easeInOutCubic);
+
+                &:first-child,
+                &:nth-child(6n + 6) {
+                    width: 49.5%;
+                }
+
+                &:hover {
+                    box-shadow: 5px 5px 30px #333;
+                    box-shadow: 5px 5px 30px rgba(0,0,0, 0.75);
+                    z-index: 100;
+                }
+
+                > div {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat !important;
+                    background-position: top center !important;
+                    background-size: cover !important;
+
+                    .overlay {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+
+                        background-color: rgba(0,0,0, 0.2);
+
+                        @include transition(all .25s $easeInOutCubic);
+                        
+                        .featured {
+                            display: inline-block;
+                            position: absolute;
+                            width: auto;
+                            top: 0;
+                            left: 0;
+                            padding: 4px 12px;
+                            z-index: 100;
+
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: #fff;
+                            text-transform: uppercase;
+
+                            background-color: #000;
+                            background-color: rgba(214,0,0, .9);
+
+                            box-shadow: 2px 2px 5px #000;
+                            box-shadow: 2px 2px 5px rgba(0,0,0, 0.5);
+
+                            border-right: 5px solid red;
+                            border-bottom: 1px solid red;
+
+                            @include transition(all .25s $easeInOutCubic);
+                        }
+                        .star {
+                            display: block;
+                            position: absolute;
+                            width: 25px;
+                            height: 25px;
+                            top: 4px;
+                            left: -60px;
+                            z-index: 1000;
+
+                            background: url(../images/star-ico.png) no-repeat center center;
+                            background-size: cover;
+
+                            @include transition(all .5s $easeInOutCubic);
+                            @include rotate(0deg);
+                        }
+                        
+                        .carousel-caption {
+                            display: block;
+                            width: 90%;
+                            padding: 10px;
+                            font-size: 18px;
+
+                            background-color: transparent;
+                            background-color: rgba(214,0,0, .75);
+
+                            border: 1px solid #ff2020;
+                            border-bottom: none;
+
+                            box-shadow: 0px 10px 10px #000;
+                            box-shadow: 0px 10px 10px rgba(0,0,0, 0.75);
+
+                            margin-left: -15%;
+                            bottom: -200px;
+                            opacity: 0;
+
+                            @include transition(all .35s $easeInOutCubic);
+
+                            h3 {
+                                margin: 0;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+                            p {
+                                margin: 0;
+                            }
+                        }
+
+                        &:hover {
+                            background-color: transparent;
+
+                            .featured {
+                                padding-left: 52px;
+                                color: yellow;
+                            }
+                            .star {
+                                left: 12px;
+                                @include rotate(720deg)
+                            }
+                            .carousel-caption {
+                                bottom: 0;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

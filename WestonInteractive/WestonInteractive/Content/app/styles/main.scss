@@ -1,0 +1,17 @@
+﻿/* Import Additional SCSS */
+@import 'variables/vars';
+@import 'mixins/helper-mixins';
+@import 'elements/carousel';
+
+.test { display: block; cursor: pointer; }
+
+/* MAIN STYLES */
+
+/* angular ui bootstrap href fix */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+body {
+    background: url(../images/main-red-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding-top: 90px;
+}
