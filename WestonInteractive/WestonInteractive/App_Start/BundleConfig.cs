@@ -20,12 +20,12 @@ namespace WestonInteractive
                         "~/Scripts/angular-ui/ui-bootstrap.js",
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                         "~/Scripts/angular-animate.js",
-                        "~/App/app.module.js",
-                        "~/App/app.js"));
+                        "~/Scripts/App/app.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/wiAppControllers").Include(
-                        "~/App/ViewModels/appViewModel.js",
-                        "~/App/ViewModels/indexViewModel.js"));
+                        //"~/App/ViewModels/appViewModel.js",
+                        //"~/App/ViewModels/indexViewModel.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/wiAppServices").Include(
                         "~/App/Services/slidesService.js"));

@@ -107,9 +107,9 @@
                         .carousel-caption {
                             display: block;
                             width: 90%;
-                            padding: 10px;
+                            padding: 30px 10px 10px;
                             font-size: 18px;
-
+                            
                             background-color: transparent;
                             background-color: rgba(214,0,0, .75);
 
@@ -132,6 +132,38 @@
                             }
                             p {
                                 margin: 0;
+                            }
+
+                            > div {
+                                display: block;
+                                position: absolute;
+                                top: -15px;
+                                right: 0;
+
+                                @include skillzList;
+                                > ul.skillzList {
+                                    display: block;
+                                    width: 100%;
+                                    height: 26px;
+                                    position: relative;
+                                    
+                                    overflow: hidden;
+
+                                    > li {
+                                        width: 26px;
+                                        height: 26px;
+                                    
+                                        &.ng-enter, &.ng-leave {
+                                            position: absolute;
+                                        }
+                                        &.ng-enter-active {
+
+                                        }
+                                        &.ng-leave-active {
+
+                                        }
+                                    }
+                                }
                             }
                         }
 

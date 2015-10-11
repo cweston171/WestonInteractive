@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -52,12 +60,24 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -120,19 +140,46 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Enums\ProjectEnums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAL\WestonInteractiveContext.cs" />
+    <Compile Include="Models\DAL\WestonInteractiveInitializer.cs" />
+    <Compile Include="Models\GallerySet.cs" />
+    <Compile Include="Models\GalleryItem.cs" />
+    <Compile Include="Models\PortfolioItem.cs" />
+    <Compile Include="Models\SkillSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VLL\PortfolioViewService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\app.js" />
-    <Content Include="App\app.module.js" />
-    <Content Include="App\Services\slidesService.js" />
-    <Content Include="App\ViewModels\appViewModel.js" />
-    <Content Include="App\ViewModels\indexViewModel.js" />
-    <Content Include="App\ViewModels\projectViewModel.js" />
+    <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\Services\slidesService.js" />
+    <Content Include="Scripts\App\Views\MainNavigation.html" />
+    <Content Include="Scripts\App\Views\projectListView.html" />
+    <Content Include="Content\app\images\badges\skillz_after-effects.jpg" />
+    <Content Include="Content\app\images\badges\skillz_angular-js.jpg" />
+    <Content Include="Content\app\images\badges\skillz_css-3.jpg" />
+    <Content Include="Content\app\images\badges\skillz_dreamweaver.jpg" />
+    <Content Include="Content\app\images\badges\skillz_droid.png" />
+    <Content Include="Content\app\images\badges\skillz_encore.jpg" />
+    <Content Include="Content\app\images\badges\skillz_flash.jpg" />
+    <Content Include="Content\app\images\badges\skillz_git.jpg" />
+    <Content Include="Content\app\images\badges\skillz_html-5.jpg" />
+    <Content Include="Content\app\images\badges\skillz_illustrator.jpg" />
+    <Content Include="Content\app\images\badges\skillz_indesign.jpg" />
+    <Content Include="Content\app\images\badges\skillz_javascript.jpg" />
+    <Content Include="Content\app\images\badges\skillz_jquery.jpg" />
+    <Content Include="Content\app\images\badges\skillz_node.jpg" />
+    <Content Include="Content\app\images\badges\skillz_photoshop.jpg" />
+    <Content Include="Content\app\images\badges\skillz_premiere.jpg" />
+    <Content Include="Content\app\images\badges\skillz_windows.png" />
+    <Content Include="Content\app\images\loader-anim.gif" />
     <Content Include="Content\app\images\logo-popper-red.png" />
     <Content Include="Content\app\images\main-red-bg.jpg" />
     <Content Include="Content\app\images\slide_001.jpg" />
@@ -179,10 +226,15 @@
     <Content Include="Content\app\json\indexSlides.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Content\app\styles\main.scss" />
+    <Content Include="Scripts\App\Views\indexView.html" />
     <None Include="compilerconfig.json" />
     <Content Include="Content\app\styles\elements\carousel.scss" />
     <Content Include="Content\app\styles\variables\vars.scss" />
     <Content Include="Content\app\styles\mixins\helper-mixins.scss" />
+    <Content Include="Content\app\styles\elements\menu.scss" />
+    <Content Include="Content\app\styles\mixins\custom-mixins.scss" />
+    <Content Include="Content\app\styles\elements\parallax.scss" />
+    <Content Include="Content\app\styles\elements\loader.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -210,11 +262,18 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Navigation.cshtml" />
+    <Content Include="Views\Shared\_Loader.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Views\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Content\portfolio\bdhg\" />
+    <Folder Include="Content\portfolio\events\" />
+    <Folder Include="Content\portfolio\film\aching\" />
+    <Folder Include="Content\portfolio\web\crankfrog\" />
+    <Folder Include="Content\portfolio\web\maverick\" />
+    <Folder Include="Content\portfolio\web\worthunlimited\" />
+    <Folder Include="Scripts\App\controllers\" />
+    <Folder Include="Views\API\" />
     <Folder Include="Views\Shared\Home\" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +283,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

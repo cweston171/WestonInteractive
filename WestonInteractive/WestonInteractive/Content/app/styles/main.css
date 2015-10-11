@@ -25,6 +25,8 @@
         border: 1px solid red;
         z-index: 0;
         -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -moz-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -o-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
         transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
         .banner .carousel .slideset .slide:first-child,
         .banner .carousel .slideset .slide:nth-child(6n + 6) {
@@ -48,6 +50,8 @@
             overflow: hidden;
             background-color: rgba(0, 0, 0, 0.2);
             -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            -moz-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            -o-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
             transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1); }
             .banner .carousel .slideset .slide > div .overlay .featured {
               display: inline-block;
@@ -68,6 +72,8 @@
               border-right: 5px solid red;
               border-bottom: 1px solid red;
               -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -moz-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -o-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
               transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1); }
             .banner .carousel .slideset .slide > div .overlay .star {
               display: block;
@@ -80,14 +86,18 @@
               background: url(../images/star-ico.png) no-repeat center center;
               background-size: cover;
               -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -moz-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -o-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
               transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
               -webkit-transform: rotate(0deg);
               -ms-transform: rotate(0deg);
+              -moz-transform: rotate(0deg);
+              -o-transform: rotate(0deg);
               transform: rotate(0deg); }
             .banner .carousel .slideset .slide > div .overlay .carousel-caption {
               display: block;
               width: 90%;
-              padding: 10px;
+              padding: 30px 10px 10px;
               font-size: 18px;
               background-color: transparent;
               background-color: rgba(214, 0, 0, 0.75);
@@ -99,6 +109,8 @@
               bottom: -200px;
               opacity: 0;
               -webkit-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -moz-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+              -o-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
               transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1); }
               .banner .carousel .slideset .slide > div .overlay .carousel-caption h3 {
                 margin: 0;
@@ -106,6 +118,33 @@
                 font-weight: bold; }
               .banner .carousel .slideset .slide > div .overlay .carousel-caption p {
                 margin: 0; }
+              .banner .carousel .slideset .slide > div .overlay .carousel-caption > div {
+                display: block;
+                position: absolute;
+                top: -15px;
+                right: 0; }
+                .banner .carousel .slideset .slide > div .overlay .carousel-caption > div .skillzList {
+                  display: block;
+                  position: relative;
+                  margin: 0;
+                  padding: 0;
+                  list-style: none; }
+                  .banner .carousel .slideset .slide > div .overlay .carousel-caption > div .skillzList > li {
+                    display: inline-block;
+                    width: 124px;
+                    height: 121px;
+                    margin: 2px; }
+                .banner .carousel .slideset .slide > div .overlay .carousel-caption > div > ul.skillzList {
+                  display: block;
+                  width: 100%;
+                  height: 26px;
+                  position: relative;
+                  overflow: hidden; }
+                  .banner .carousel .slideset .slide > div .overlay .carousel-caption > div > ul.skillzList > li {
+                    width: 26px;
+                    height: 26px; }
+                    .banner .carousel .slideset .slide > div .overlay .carousel-caption > div > ul.skillzList > li.ng-enter, .banner .carousel .slideset .slide > div .overlay .carousel-caption > div > ul.skillzList > li.ng-leave {
+                      position: absolute; }
             .banner .carousel .slideset .slide > div .overlay:hover {
               background-color: transparent; }
               .banner .carousel .slideset .slide > div .overlay:hover .featured {
@@ -115,14 +154,222 @@
                 left: 12px;
                 -webkit-transform: rotate(720deg);
                 -ms-transform: rotate(720deg);
+                -moz-transform: rotate(720deg);
+                -o-transform: rotate(720deg);
                 transform: rotate(720deg); }
               .banner .carousel .slideset .slide > div .overlay:hover .carousel-caption {
                 bottom: 0;
                 opacity: 1; }
 
-.test {
+/* Parallax base styles
+  --------------------------------------------- */
+.parallax {
+  height: 500px;
+  /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  perspective: 300px; }
+
+.parallax_group {
+  position: relative;
+  height: 500px;
+  /* fallback for older browsers */
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.parallax_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.parallax_layer--fore {
+  -webkit-transform: translateZ(90px) scale(0.7);
+  -moz-transform: translateZ(90px) scale(0.7);
+  -ms-transform: translateZ(90px) scale(0.7);
+  -o-transform: translateZ(90px) scale(0.7);
+  transform: translateZ(90px) scale(0.7);
+  z-index: 1; }
+
+.parallax_layer--base {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4; }
+
+.parallax_layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  -moz-transform: translateZ(-300px) scale(2);
+  -ms-transform: translateZ(-300px) scale(2);
+  -o-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3; }
+
+.parallax_layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  -moz-transform: translateZ(-600px) scale(3);
+  -ms-transform: translateZ(-600px) scale(3);
+  -o-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2; }
+
+/* style the groups
+  --------------------------------------------- */
+#group1 {
+  z-index: 5;
+  /* slide over group 2 */ }
+
+#group1 .parallax__layer--base {
+  background: #66cc66; }
+
+#group2 {
+  z-index: 3;
+  /* slide under groups 1 and 3 */ }
+
+#group2 .parallax_group {
+  background: rgba(0, 0, 0, 0.5); }
+
+#group3 {
+  z-index: 4;
+  /* slide over group 2 and 4 */ }
+
+#group4 {
+  z-index: 2;
+  /* slide under group 3 and 5 */ }
+
+#group5 {
+  z-index: 3;
+  /* slide over group 4 and 6 */ }
+
+#group6 {
+  z-index: 2;
+  /* slide under group 5 and 7 */ }
+
+#group7 {
+  z-index: 3;
+  /* slide over group 7 */ }
+
+.wi-menu {
+  margin: 0; }
+  .wi-menu > ul > li > a {
+    font-size: medium;
+    text-transform: uppercase; }
+
+.loader-activity {
   display: block;
-  cursor: pointer; }
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #333;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9995; }
+  .loader-activity .loader {
+    display: block;
+    position: absolute;
+    width: 150px;
+    height: 139px;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -75px; }
+    .loader-activity .loader > img {
+      display: block;
+      width: 100%;
+      border: none; }
+  .loader-activity .message {
+    display: block;
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: 80px;
+    margin-left: -150px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    color: #fff; }
+
+.html-5, .css-3, .javascript, .jquery, .angular-js, .node-js,
+.git, .android, .c-sharp, .photoshop, .dreamweaver,
+.adobe-illustrator, .indesign, .flash, .adobe-premiere,
+.after-effects, .adobe-encore {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .html-5:hover, .css-3:hover, .javascript:hover, .jquery:hover, .angular-js:hover, .node-js:hover,
+  .git:hover, .android:hover, .c-sharp:hover, .photoshop:hover, .dreamweaver:hover,
+  .adobe-illustrator:hover, .indesign:hover, .flash:hover, .adobe-premiere:hover,
+  .after-effects:hover, .adobe-encore:hover {
+    background-size: 125% auto; }
+
+.html-5 {
+  background-image: url(../images/badges/skillz_html-5.jpg); }
+
+.css-3 {
+  background-image: url(../images/badges/skillz_css-3.jpg); }
+
+.javascript {
+  background-image: url(../images/badges/skillz_javascript.jpg); }
+
+.jquery {
+  background-image: url(../images/badges/skillz_jquery.jpg); }
+
+.angular-js {
+  background-image: url(../images/badges/skillz_angular-js.jpg); }
+
+.node-js {
+  background-image: url(../images/badges/skillz_node.jpg); }
+
+.git {
+  background-image: url(../images/badges/skillz_git.jpg); }
+
+.android {
+  background-image: url(../images/badges/skillz_droid.png);
+  background-size: auto 90%; }
+  .android:hover {
+    background-size: auto 100%; }
+
+.c-sharp {
+  background-image: url(../images/badges/skillz_windows.png); }
+
+.photoshop {
+  background-image: url(../images/badges/skillz_photoshop.jpg); }
+
+.dreamweaver {
+  background-image: url(../images/badges/skillz_dreamweaver.jpg); }
+
+.adobe-illustrator {
+  background-image: url(../images/badges/skillz_illustrator.jpg); }
+
+.indesign {
+  background-image: url(../images/badges/skillz_indesign.jpg); }
+
+.flash {
+  background-image: url(../images/badges/skillz_flash.jpg); }
+
+.adobe-premiere {
+  background-image: url(../images/badges/skillz_premiere.jpg); }
+
+.after-effects {
+  background-image: url(../images/badges/skillz_after-effects.jpg); }
+
+.adobe-encore {
+  background-image: url(../images/badges/skillz_encore.jpg); }
 
 /* MAIN STYLES */
 /* angular ui bootstrap href fix */
@@ -130,6 +377,54 @@
   cursor: pointer; }
 
 body {
-  background: url(../images/main-red-bg.jpg) no-repeat center center;
+  background: url(../images/main-red-bg.jpg) no-repeat fixed #000;
   background-size: cover;
-  padding-top: 90px; }
+  padding-top: 90px;
+  font-family: 'proxima nova', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px; }
+  body .skillzList {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    body .skillzList > li {
+      display: inline-block;
+      width: 124px;
+      height: 121px;
+      margin: 2px; }
+  body .skillzList {
+    max-width: 1000px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    body .skillzList > li {
+      width: 100px;
+      height: 100px; }
+
+.container {
+  padding: 0; }
+
+.view-animate-container {
+  position: relative; }
+  .view-animate-container > .view-animate.ng-enter {
+    top: -20px; }
+  .view-animate-container > .view-animate.ng-leave {
+    top: 0; }
+  .view-animate-container > .view-animate.ng-enter, .view-animate-container > .view-animate.ng-leave {
+    display: block;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; }
+    .view-animate-container > .view-animate.ng-enter.ng-enter-active, .view-animate-container > .view-animate.ng-leave.ng-enter-active {
+      top: 0;
+      opacity: 1; }
+    .view-animate-container > .view-animate.ng-enter.ng-leave-active, .view-animate-container > .view-animate.ng-leave.ng-leave-active {
+      top: -20px;
+      opacity: 0; }
+

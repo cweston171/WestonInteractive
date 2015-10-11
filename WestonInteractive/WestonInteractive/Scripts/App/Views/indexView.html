@@ -1,0 +1,40 @@
+﻿<article data-ng-controller="IndexCntrl">
+    <!-- main banner -->
+    <section class="banner">
+        <!-- featured projects carousel  -->
+        <div class="carousel" interval="cInterval" no-wrap="noWrapSlides">
+            <!-- slide -->
+            <div class="slideset">
+                <!-- grid -->
+                <div data-ng-repeat="slide in slider.slideSet" class="slide">
+                    <div style="background: url('{{ slider.imgPath + slider.imgPrefix + slide.id + slider.imgSuffix }}');">
+                        <div class="overlay">
+                            <div class="star" data-ng-show="slide.isFeatured"> </div>
+                            <div class="featured" data-ng-show="slide.isFeatured">Featured</div>
+                            <div class="carousel-caption">
+                                <h3>{{ slide.title }}</h3>
+                                <p>{{ slide.caption }}</p>
+                                <div>
+                                    <ul class="skillzList">
+                                        <li data-ng-repeat="skill in slide.skillz" data-ng-show="skill.isChecked" class="{{ skill.className }}" title="{{ skill.title }}"><span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <!--/grid -->
+            </div>
+            <!--/slide -->
+        </div>
+        <!--/featured projects carousel -->
+    </section>
+    <!--/main banner -->
+    <!-- main skillz list -->
+    <ul class="skillzList">
+        <li data-ng-repeat="skill in allSkillz" data-ng-show="skill.isChecked" class="{{ skill.className }}" title="{{ skill.title }}"><span></span></li>
+    </ul>
+    <!--/main skillz list -->
+    <div class="clearfix"></div>
+</article>

@@ -1,0 +1,14 @@
+﻿.wi-menu {
+    margin: 0;
+
+    > ul {
+        > li {
+            > a {
+                font-size: medium;
+                text: {
+                    transform: uppercase;
+                }
+            }
+        }  
+    }
+}

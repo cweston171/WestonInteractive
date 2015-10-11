@@ -1,0 +1,90 @@
+﻿@mixin skillzClasses {
+    .html-5, .css-3, .javascript, .jquery, .angular-js, .node-js,
+    .git, .android, .c-sharp, .photoshop, .dreamweaver,
+    .adobe-illustrator, .indesign, .flash, .adobe-premiere,
+    .after-effects, .adobe-encore {
+        background: {
+            repeat: no-repeat;
+            position: center center;
+            size: 100% auto;
+        }
+        @include transition(all .5s ease);
+
+        &:hover {
+            background-size: 125% auto;
+        }
+    }
+
+    .html-5 {
+        background-image: url(../images/badges/skillz_html-5.jpg);
+    }
+    .css-3 {
+        background-image: url(../images/badges/skillz_css-3.jpg);
+    }
+    .javascript { 
+        background-image: url(../images/badges/skillz_javascript.jpg);
+    }
+    .jquery { 
+        background-image: url(../images/badges/skillz_jquery.jpg);
+    }
+    .angular-js { 
+        background-image: url(../images/badges/skillz_angular-js.jpg);
+    }
+    .node-js { 
+        background-image: url(../images/badges/skillz_node.jpg);
+    }
+    .git { 
+        background-image: url(../images/badges/skillz_git.jpg);
+    }
+    .android { 
+        background-image: url(../images/badges/skillz_droid.png);
+        background-size: auto 90%;
+        &:hover {
+            background-size: auto 100%;
+        }
+    }
+    .c-sharp { 
+        background-image: url(../images/badges/skillz_windows.png);
+    }
+    .photoshop { 
+        background-image: url(../images/badges/skillz_photoshop.jpg);
+    }
+    .dreamweaver { 
+        background-image: url(../images/badges/skillz_dreamweaver.jpg);
+    }
+    .adobe-illustrator { 
+        background-image: url(../images/badges/skillz_illustrator.jpg);
+    }
+    .indesign { 
+        background-image: url(../images/badges/skillz_indesign.jpg);
+    }
+    .flash { 
+        background-image: url(../images/badges/skillz_flash.jpg);
+    }
+    .adobe-premiere { 
+        background-image: url(../images/badges/skillz_premiere.jpg);
+    }
+    .after-effects { 
+        background-image: url(../images/badges/skillz_after-effects.jpg);
+    }
+    .adobe-encore { 
+        background-image: url(../images/badges/skillz_encore.jpg);
+    }
+}
+
+@mixin skillzList {
+    .skillzList {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            display: inline-block;
+            width: 124px;
+            height: 121px;
+            margin: 2px;
+        }
+    }
+}

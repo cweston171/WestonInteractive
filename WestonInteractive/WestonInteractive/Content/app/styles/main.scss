@@ -1,9 +1,14 @@
 ﻿/* Import Additional SCSS */
 @import 'variables/vars';
 @import 'mixins/helper-mixins';
+@import 'mixins/custom-mixins';
 @import 'elements/carousel';
+@import 'elements/parallax';
+@import 'elements/menu';
+@import 'elements/loader';
 
-.test { display: block; cursor: pointer; }
+@include skillzClasses;
+
 
 /* MAIN STYLES */
 
@@ -11,7 +16,61 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 body {
-    background: url(../images/main-red-bg.jpg) no-repeat center center;
+    background: url(../images/main-red-bg.jpg) no-repeat fixed #000;
     background-size: cover;
     padding-top: 90px;
+    font: {
+        family: 'proxima nova', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        size: 18px;
+    }
+    
+    @include skillzList;
+   .skillzList {
+        max-width: 1000px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        > li {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.container {
+    padding: 0;
+}
+
+.view-animate-container {
+    position: relative;
+
+    > .view-animate {
+        &.ng-enter {
+            top: -20px;
+        }
+        &.ng-leave {
+            top: 0;
+        }
+        &.ng-enter, &.ng-leave {
+            display: block;
+            width: 100%;
+            
+            position: absolute;
+            
+            opacity: 0;
+
+            @include transition(all 1s ease);
+
+            &.ng-enter-active {
+                top: 0;
+                opacity: 1;
+            }
+            &.ng-leave-active {
+                top: -20px;
+                opacity: 0;
+            }
+        }
+    }
 }

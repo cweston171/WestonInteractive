@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html data-ng-app="westonInteractive" data-ng-controller="app.shared">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,46 +8,22 @@
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/wiAppControllers")
     @Scripts.Render("~/bundles/wiAppServices")
+
+    <script src="//use.typekit.net/pep5wbh.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body>
-    @Html.Partial("Navigation")
+<body data-ng-app="westonInteractive" data-ng-controller="AppCntrl">
+    <main-menu menus="menus"></main-menu>
 
-    <main class="container body-content">
-        <!-- main banner -->
-        <section class="banner" ng-controller="app.index">
-            <!-- angular carousel  -->
-            <carousel class="carousel" interval="cInterval" no-wrap="noWrapSlides">
-                <!-- slide -->
-                <slide class="slideset" ng-repeat="slideSet in slider.slideSets" active="slideset.active">
-                    <!-- grid -->
-                    <div ng-repeat="slide in slideSet" class="slide">
-                        <div style="background: url('{{ slider.imgPath + slider.imgPrefix + slide.num + slider.imgSuffix }}');">
-                            <div class="overlay">
-                                <div class="star"> </div>
-                                <div class="featured">Featured</div>
-                                <div class="carousel-caption">
-                                    <h3>{{ slide.title }}</h3>
-                                    <p>{{ slide.caption }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <!--/grid -->
-                </slide>
-                <!--/slide -->
-            </carousel>
-            <!--/angular carousel -->
-        </section>
-        <!--/main banner -->
-
+    <main class="view-animate-container">
         @RenderBody()
-
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - {{ app.title }}</p>
-        </footer>
     </main>
+
+    <footer class="container">
+        <p>&copy; @DateTime.Now.Year - {{ app.title }}</p>
+    </footer>
+
+    @Html.Partial("_Loader")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
